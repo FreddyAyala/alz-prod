@@ -109,6 +109,7 @@ archetypes:  # `caf-enterprise-scale` module, add inputs as listed on the module
               enabled: true
               config:
                 address_prefix: 10.4.0.64/26
+                address_management_prefix: 10.4.0.128/26
                 enable_dns_proxy: false
                 sku_tier: Basic
                 base_policy_id: ""
