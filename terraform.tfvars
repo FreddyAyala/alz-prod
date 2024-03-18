@@ -1,0 +1,7 @@
+configuration_file_path         = "alz-config.yml"
+default_location                = "francecentral"
+default_postfix                 = ""
+root_parent_management_group_id = ""
+subscription_id_connectivity    = "fb1f6566-ab6c-475c-966e-de09df7faf9b"
+subscription_id_identity        = "92b67342-4ea5-42e5-b6bc-97be10d8720b"
+subscription_id_management      = "91e188aa-78e2-409e-bf50-860fd2d80956"
