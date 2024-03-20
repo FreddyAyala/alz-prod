@@ -96,6 +96,21 @@ archetypes:  # `caf-enterprise-scale` module, add inputs as listed on the module
               - "10.4.0.32/27"
               network_security_group_id : ""
               route_table_id: ""
+            - name: "SharedServiceSubnet"
+              address_prefixes:
+              - "10.4.0.192/27"
+              network_security_group_id : ""
+              route_table_id: ""
+          - name: "inboundsubnetdns"
+              address_prefixes:
+              - "10.4.0.224/28"
+              network_security_group_id : ""
+              route_table_id: ""
+          - name: "outboundsubnetdns"
+              address_prefixes:
+              - "10.4.0.240/28"
+              network_security_group_id : ""
+              route_table_id: ""
             virtual_network_gateway:
               enabled: true
               config:
@@ -205,4 +220,18 @@ archetypes:  # `caf-enterprise-scale` module, add inputs as listed on the module
       virtual_network_resource_ids_to_link: []
     location: ${default_location}
     tags: null
-    advanced: null
+    advanced:
+      custom_settings_by_resource_type:
+        azurerm_subnet:
+          connectivity:
+            francecentral:
+              outboundsubnetdns:
+                delegation:
+                  - name: "Microsoft.Network/dnsResolvers"
+                    service_delegation:
+                      - name: "Microsoft.Network/dnsResolvers"
+              inboundsubnetdns:
+                delegation:
+                  - name: "Microsoft.Network/dnsResolvers"
+                    service_delegation:
+                      - name: "Microsoft.Network/dnsResolvers"
